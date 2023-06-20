@@ -22,10 +22,15 @@ function CreatePost() {
   }
 
   const handleChange = (e) => {
-
+    setForm({...form,  [e.target.name] : e.target.value});
   }
 
   const handleSurpriseMe = () => {
+    const randomPrompt = getRandomPrompt(form.prompt);
+    setForm({ ...form, prompt: randomPrompt });
+  }
+
+  const generateImage = () => {
 
   }
 
@@ -56,7 +61,7 @@ function CreatePost() {
             type="text"
             name="prompt"
             placeholder="a fortune-telling shiba inu reading your fate in a giant hamburger, digital art"
-            value={form.name}
+            value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe
             handleSurpriseMe={handleSurpriseMe}
