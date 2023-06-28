@@ -30,7 +30,34 @@ function CreatePost() {
     setForm({ ...form, prompt: randomPrompt });
   }
 
-  const generateImage = () => {
+  const generateImage = async() => {
+
+    if (form.prompt){
+      try{
+
+        setGeneratingImg(true);
+        const respone = await fetch("http://localhost:8080/api/v1/dalle", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({prompt: form.prompt}),
+        });
+
+        const data = await respone.json();
+        setForm({...form, photo: `data:image/jpeg;base64,${data.photo}`});
+
+      } catch (error){
+        console.log(error)
+      }
+
+      finally{
+        setGeneratingImg(false)
+      }
+
+    } else {
+      alert("Please enter a prompt");
+    }
 
   }
 
@@ -92,7 +119,7 @@ function CreatePost() {
         <div className="mt-5 flex gap-5">
               <button 
                 type="button"
-                // onClick={generateImage}
+                onClick={generateImage}
                 className="text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
               >
                 {generatingImg ? "Generating..." : "Generate"}

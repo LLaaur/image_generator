@@ -16,7 +16,7 @@ const openai = new OpenAIApi(configuration)
 
 
 router.route("/").get((req, res) => {
-    res.send("wasup from dalle")
+    res.status(200).json({message: "wasup from dalle"})
 })
 
 router.route("/").post(async(req, res) => {
