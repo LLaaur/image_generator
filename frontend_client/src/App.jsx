@@ -7,9 +7,9 @@ import {logo} from "./assets"
 const App = () => {
   return (
     <BrowserRouter>
-      <header className="w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
+      <header className="w-full h-28 flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
         <Link to="/">
-          <img src={logo} alt="logo" className="w-20 object-contain"></img>
+          <img src={logo} alt="logo" className="object-none w-80"></img>
         </Link>
 
         <Link to="/create-post" className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md">
