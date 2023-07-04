@@ -8,3 +8,5 @@ I shall add that this is my first MERN stack project and I'm glad I succeeded in
 
 ![dreamscape](https://github.com/LLaaur/image_generator/assets/102544514/1e46c8db-e16b-4e15-9cc9-1f75680460ce)
 ![cat](https://github.com/LLaaur/image_generator/assets/102544514/34a9d949-2907-47cc-8f6c-28a946d430e4)
+
+👉 <a link href = 'https://laurdreamscape.netlify.app' /> Live Demo </a>
